@@ -1,0 +1,27 @@
+{
+  "name": "learning",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": ">=6.9.0"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  },
+  "scripts": {
+    "fire": "babel-node"
+  },
+  "author": "Michał Kubrycz",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-eslint": "^8.2.2",
+    "eslint": "^4.18.2",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-json": "^1.2.0",
+    "prettier-eslint": "^8.8.1"
+  }
+}
