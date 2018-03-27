@@ -1,10 +1,6 @@
 {
-  "plugins": [
-    "json"
-  ],
-  "extends": [
-    "airbnb-base"
-  ],
+  "plugins": ["json"],
+  "extends": ["airbnb-base"],
   "rules": {
     "no-console": "off",
     "no-await-in-loop": "off",

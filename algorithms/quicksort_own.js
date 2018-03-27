@@ -1,7 +1,5 @@
 const swap = (array, idx1, idx2) => {
-  const temp = array[idx1];
-  array[idx1] = array[idx2];
-  array[idx2] = temp;
+  [array[idx1], array[idx2]] = [array[idx2], array[idx1]];
 };
 
 const partition = (array, idxL, idxR) => {
@@ -22,20 +20,15 @@ const partition = (array, idxL, idxR) => {
   return idx.left;
 };
 
-const quicksort = (array) => {
+const quicksort = (array, idxL = 0, idxR = array.length - 1) => {
   if (array.length > 1) {
     const idx = {
-      left: 0,
-      right: array.length - 1,
+      left: idxL,
+      right: idxR,
     };
-    const part = {
-      left: partition(array, idx.left, idx.right),
-    };
-    part.right = part.left - 1;
-    while (part.right > 1 || part.left < array.length - 1) {
-      if (idx.left < part.right) part.right = partition(array, idx.left, part.right);
-      if (idx.right > part.left) part.left = partition(array, part.left, idx.right);
-    }
+    const part = partition(array, idx.left, idx.right);
+    if (idx.left < part.left) quicksort(array, idx.left, part.left);
+    if (idx.right > part.right) quicksort(array, part.right, idx.right);
   }
   return array;
 };
